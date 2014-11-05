@@ -1,4 +1,7 @@
-django-tutorial
+wsgi-101
 ===============
 
-Learn django
+Understanding wsgi. Task: 
+
+ [ ] Create urls.py in a separate module
+ [ ] Create views.py in a separate module
