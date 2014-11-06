@@ -6,44 +6,6 @@ from cgi import escape
 from views import *
 import urls 
 
-#def index(environ, start_response):
-#    """This function will be mounted on "/" and display a link
-#    to the hello world page."""
-#    start_response('200 OK', [('Content-Type', 'text/html')])
-#    return ['''Hello World Application
-#               This is the Hello World application:
-#
-#`continue <hello/>`_
-#
-#''']
-#
-#def hello(environ, start_response):
-#    """Like the example above, but it uses the name specified in the
-#URL."""
-#    # get the name from the url if it was specified there.
-#    args = environ['myapp.url_args']
-#    if args:
-#        subject = escape(args[0])
-#    else:
-#        subject = 'World'
-#    start_response('200 OK', [('Content-Type', 'text/html')])
-#    return ['''Hello %(subject)s
-#            Hello %(subject)s!
-#
-#''' % {'subject': subject}]
-#
-#def not_found(environ, start_response):
-#    """Called if no URL matches."""
-#    start_response('404 NOT FOUND', [('Content-Type', 'text/plain')])
-#    return ['Not Found']
-#
-# map urls to functions
-#urls = [
-#    (r'^$', index),
-#    (r'hello/?$', hello),
-#    (r'hello/(.+)$', hello)
-#]
-
 def application(environ, start_response):
     """
     The main WSGI application. Dispatch the current request to
