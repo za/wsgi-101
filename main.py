@@ -4,7 +4,7 @@ import re
 from cgi import escape
 
 from views import *
-from urls import *
+import urls 
 
 #def index(environ, start_response):
 #    """This function will be mounted on "/" and display a link
