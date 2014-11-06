@@ -3,8 +3,10 @@ from cgi import parse_qs, escape
 import re
 from cgi import escape
 
-from views import *
-from urls import *
+#from views import *
+import views
+#from urls import *
+import urls
 
 #def index(environ, start_response):
 #    """This function will be mounted on "/" and display a link
@@ -54,7 +56,7 @@ def application(environ, start_response):
     If nothing matches call the `not_found` function.
     """
     path = environ.get('PATH_INFO', '').lstrip('/')
-    for regex, callback in urls:
+    for regex, callback in urls.urls:
         match = re.search(regex, path)
         if match is not None:
             environ['myapp.url_args'] = match.groups()
