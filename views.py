@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+from cgi import parse_qs, escape
+
 def index(environ, start_response):
     start_response('200 OK', [('Content-Type', 'text/html')])
     return ['''Hello World Application

@@ -21,7 +21,7 @@ def application(environ, start_response):
         if match is not None:
             environ['myapp.url_args'] = match.groups()
             return callback(environ, start_response)
-    return not_found(environ, start_response)
+    return views.not_found(environ, start_response)
 
 if __name__ == '__main__':
     from wsgiref.simple_server import make_server
