@@ -1,8 +1,6 @@
 from cgi import parse_qs, escape
 
 import re
-from cgi import escape
-
 import views
 import urls
 
