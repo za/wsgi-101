@@ -1,7 +1,10 @@
+#!/usr/bin/python
+
 from cgi import parse_qs, escape
 from wsgiref.simple_server import make_server
-
 import re
+
+# import your own created module
 import views
 import urls
 
