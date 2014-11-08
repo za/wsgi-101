@@ -18,10 +18,20 @@ def application(environ, start_response):
     If nothing matches call the `not_found` function.
     """
     path = environ.get('PATH_INFO', '').lstrip('/')
-    for regex, callback in urls.urls:
-        match = re.search(regex, path)
+    for regex, callback in urls.urls: 
+	# so this for will check for two variable in urls.urls
+	# urls datatype is tuple which has list 
+	# urls = [(r'^$', views.index),(r'^hello/?$', views.hello)
+	# the first one called regex and the other is the callback
+        match = re.search(regex, path)	
+		# match = re.search(pattern, string)
+		# match datatype is boolean
         if match is not None:
+		# so if this true
             environ['myapp.url_args'] = match.groups()
+			# what's groups function?
+			# and I think this environ 
+			# and myapp.url_args is the keywords for 2nd exercise
             return callback(environ, start_response)
     return views.not_found(environ, start_response)
 
