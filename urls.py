@@ -1,7 +1,9 @@
 #!/usr/bin/python
 
+import views
+
 urls = [
-    (r'^$', index),
-    (r'hello/?$', hello),
-    (r'hello/(.+)$', hello),
+    (r'^$', views.index),
+    (r'hello/?$', views.hello),
+    (r'hello/(.+)$', views.hello),
 ]
