@@ -1,4 +1,5 @@
 from cgi import parse_qs, escape
+from wsgiref.simple_server import make_server
 
 import re
 import views
@@ -21,7 +22,10 @@ def application(environ, start_response):
             return callback(environ, start_response)
     return views.not_found(environ, start_response)
 
-if __name__ == '__main__':
-    from wsgiref.simple_server import make_server
+def main():
+	
     srv = make_server('localhost', 8080, application)
     srv.serve_forever()
+
+if __name__ == '__main__':
+	main()
