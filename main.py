@@ -6,8 +6,8 @@ import re
 
 # import your own created module
 import views
-import urls
-#import settings
+#import urls
+import settings
 
 #with open(settings.ROOT_URLCONF) as f:
 #    urls = f.readlines()
@@ -22,10 +22,10 @@ def application(environ, start_response):
     If nothing matches call the `not_found` function.
     """
     path = environ.get('PATH_INFO', '').lstrip('/')
-    print type(urls.urls) 
-    print urls.urls
+    #print type(urls.urls) 
+    #print urls.urls
     
-    for regex, callback in urls.urls: 
+    for regex, callback in settings.ROOT_URLCONF.urls: 
     #what's urls.urls datatype? it's list
     
     #for regex, callback in enumerate(urls): 
