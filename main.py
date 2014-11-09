@@ -7,6 +7,7 @@ import re
 # import your own created module
 import views
 import urls
+import settings
 
 def application(environ, start_response):
     """
