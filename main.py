@@ -10,7 +10,7 @@ import views
 import settings
 
 with open(settings.ROOT_URLCONF) as f:
-    urls = f.read()
+    urls = f.readlines()
 
 def application(environ, start_response):
     """
@@ -28,7 +28,7 @@ def application(environ, start_response):
     #for regex, callback in urls.urls: 
     #what's urls.urls datatype? it's list
     
-    for regex, callback in urls: 
+    for regex, callback in enumerate(urls): 
     
     #regx = [x[0] for x in urls]
     #callbck = [x[1] for x in urls]
