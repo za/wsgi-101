@@ -27,3 +27,11 @@ NameError: global name 'not_found' is not defined
 ```
 
 Errors solved.
+
+This is the urls.urls look a like when it's called:
+```python
+<type 'list'>
+[('^$', <function index at 0x1091488>), ('hello/?$', <function hello at 
+0x1091500>), ('hello/(.+)$', <function hello at 0x1091500>)]
+127.0.0.1 - - [10/Nov/2014 08:19:18] "GET / HTTP/1.1" 200 99
+```
