@@ -5,12 +5,9 @@ from wsgiref.simple_server import make_server
 import re
 
 # import your own created module
-import views
-#import urls
-import settings
-
-#with open(settings.ROOT_URLCONF) as f:
-#    urls = f.readlines()
+import something.views
+import something.urls
+#import settings
 
 def application(environ, start_response):
     """
@@ -22,22 +19,10 @@ def application(environ, start_response):
     If nothing matches call the `not_found` function.
     """
     path = environ.get('PATH_INFO', '').lstrip('/')
-    #print type(urls.urls) 
-    #print urls.urls
+    #print type(settings.ROOT_URLCONF.urlpatterns) 
+    #print settings.ROOT_URLCONF.urlpatterns
     
-    for regex, callback in settings.ROOT_URLCONF.urls: 
-    #what's urls.urls datatype? it's list
-    
-    #for regex, callback in enumerate(urls): 
-    #for regex, callback in settings.urls: 
-     
-    #regx = [x[0] for x in urls]
-    #callbck = [x[1] for x in urls]
-    # so this for will check for two variable in urls.urls
-	# urls datatype is tuple which has list 
-	# urls = [(r'^$', views.index),(r'^hello/?$', views.hello)
-	# the first one called regex and the other is the callback
-    #for regex, callback in regx, callbck:
+    for regex, callback in something.urls.urlpatterns: 
         match = re.search(regex, path)	
 		# match = re.search(pattern, string)
 		# match datatype is boolean
