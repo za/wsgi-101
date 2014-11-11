@@ -7,7 +7,7 @@ def index(environ, start_response):
     response_headers = [('Content-Type', 'text/html')]
     start_response(status, response_headers)
     return ['''Hello World Application
-               This is the Hello World application:
+               This is the Hello World Application:
 
 `continue <hello/>`_
 
