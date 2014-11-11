@@ -14,11 +14,11 @@ class TestApplication(unittest.TestCase):
         }
 
         response = application(environ, start_response)
-        self.assertTrue('Hello World Application ' in "".join(response))
+        self.assertTrue('Hello World Application' in "".join(response))
 
     def test_hello_zaki(self):
         environ = {
-            'PATH_INFO' : '/hello/aman',
+            'PATH_INFO' : '/hello/zaki',
         }
 
         response = application(environ, start_response)
@@ -30,7 +30,7 @@ class TestApplication(unittest.TestCase):
         }
 
         response = application(environ, start_response)
-        self.assertTrue('Not found ' in "".join(response))
+        self.assertTrue('Not Found' in "".join(response))
 
 
 if __name__ == '__main__':
