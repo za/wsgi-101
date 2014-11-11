@@ -1,4 +1,4 @@
-from .. import views
+import views
 
 urlpatterns = [
     (r'^$', views.index),
